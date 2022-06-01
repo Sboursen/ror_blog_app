@@ -23,6 +23,8 @@
 - Run `rails s` to start interactive the `puma` server.
 - Open `http://localhost:3000` in your browser.
 
+- to run tests `bundle exec rspec`.
+
 ## About me
 
 👤 **Soufiane Boursen**
