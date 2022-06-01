@@ -5,7 +5,7 @@
 ## Milestones
 
 - [x] Milestone 1: Setup and controllers.
-- [ ] Milestone 2: Controllers specs.
+- [x] Milestone 2: Controllers specs.
 - [ ] Milestone 3: Creating a data model.
 - [ ] Milestone 4: Processing data in models.
 - [ ] Milestone 5: Views.
