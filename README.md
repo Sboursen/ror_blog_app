@@ -2,11 +2,17 @@
 
 > **Blog_app** is an implementation of the classic blog website. It's a full stack ruby on rails website that show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
+## Technologies
+
+- Ruby on Rails
+- Rspec
+- Rubocop
+
 ## Milestones
 
 - [x] Milestone 1: Setup and controllers.
 - [x] Milestone 2: Controllers specs.
-- [ ] Milestone 3: Creating a data model.
+- [x] Milestone 3: Creating a data model.
 - [ ] Milestone 4: Processing data in models.
 - [ ] Milestone 5: Views.
 - [ ] Milestone 6: Forms
@@ -16,6 +22,10 @@
 - [ ] Milestone 10: Integration specs for Views.
 - [ ] Milestone 11: Add API endpoints.
 - [ ] Milestone 12: API documentation.
+
+## ERD diagram
+
+![ERD](./doc/blog_app_erd.png)
 
 ## Getting Started
 
