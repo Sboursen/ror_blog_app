@@ -2,7 +2,7 @@
   <%= render partial: "users/user" , locals: { user: @user } %>
 </div>
 
-<div>
+<div class="posts">
   <% @posts.each_with_index do |post, index| %>
     <%= render partial: "post" , locals: { post: post, index: index } %>
       <ul>

@@ -24,6 +24,17 @@ body {
   margin: 3rem;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* post partial */
 
 .post {
@@ -35,13 +46,13 @@ body {
   border: 2px solid black;
 }
 
-.post > h2 {
+.post h2 {
   align-self: flex-start;
   font-size: 1.25rem;
   margin: 0.5rem;
 }
 
-.post > p {
+.post p {
   font-size: 1rem;
 }
 
@@ -111,8 +122,17 @@ body {
 }
 
 button {
-  padding: 0.25rem;
+  padding: 0.5rem;
   align-self: center;
   margin: 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+/* Posts */
+
+.posts ul {
+  margin-top: 0.5rem;
+  background-color: rgb(193, 193, 193);
+  border: 2px solid black;
 }
