@@ -1,2 +1,18 @@
 <h1>Users</h1>
 <p>Shows info for a specific user</p>
+
+
+<div>
+  <%= render @user %>
+</div>
+<p>
+  <%= @user.bio %>
+</p>
+
+<div>
+  <% @posts.each_with_index do |post, index| %>
+    <%= render partial: "posts/post" , locals: { post: post, index: index } %>
+      <% end %>
+</div>
+
+<button type="button">See all posts</button>
