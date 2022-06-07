@@ -1,9 +1,15 @@
 <div>
-  <h2>
-    <%= user.name %>
-  </h2>
-  <h4>
-    <span>Number of posts: </span>
-    <%= user.posts_counter %>
-  </h4>
+  <div class="photo">
+    <img alt="my photo" src="<%= asset_path(user.photo) %>" />
+  </div>
+
+  <div class="data">
+    <h2>
+      <%= user.name %>
+    </h2>
+    <h4>
+      <span>Number of posts: </span>
+      <%= user.posts_counter %>
+    </h4>
+  </div>
 </div>
