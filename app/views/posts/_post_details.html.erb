@@ -1,14 +1,12 @@
 <div>
   <h2>
-    <span>Post #<%= index %></span>
-    <span>
-      <%= post.title %>
-    </span>
+    Post by <%= post.author.name %>
   </h2>
-  <p>
-    <%= post.text %>
-  </p>
   <small>
     <span>Comment: <%= post.comments_count %>, Likes: <%= post.likes_count %></span>
   </small>
+  <p>
+    <%= post.text %>
+  </p>
+
 </div>
