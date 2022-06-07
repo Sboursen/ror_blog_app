@@ -1,4 +1,4 @@
-<div>
+<div class="user">
   <div class="photo">
     <img alt="my photo" src="<%= asset_path(user.photo) %>" />
   </div>
@@ -7,9 +7,9 @@
     <h2>
       <%= user.name %>
     </h2>
-    <h4>
+    <small>
       <span>Number of posts: </span>
       <%= user.posts_counter %>
-    </h4>
+    </small>
   </div>
 </div>
