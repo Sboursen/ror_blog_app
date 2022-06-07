@@ -24,6 +24,33 @@ body {
   margin: 3rem;
 }
 
+/* post partial */
+
+.post {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  border: 2px solid black;
+}
+
+.post > h2 {
+  align-self: flex-start;
+  font-size: 1.25rem;
+  margin: 0.5rem;
+}
+
+.post > p {
+  font-size: 1rem;
+}
+
+.post > small {
+  align-self: flex-end;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 /* User partial */
 
 .user {
@@ -31,13 +58,13 @@ body {
   display: flex;
   align-items: center;
   gap: 3rem;
-  background-color: lightgrey;
 }
 
 .user .photo {
   width: 6rem;
   height: 6rem;
   border: 2px solid black;
+  background-color: lightgrey;
 }
 
 .user .data {
@@ -49,6 +76,7 @@ body {
   width: 100%;
   height: 5rem;
   border: 2px solid black;
+  background-color: lightgrey;
 }
 
 .user .data > h2 {
@@ -61,4 +89,30 @@ body {
   font-weight: 600;
 }
 
-/* User partial */
+/* Users */
+.users {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-bio {
+  margin-top: 1rem;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+.user-bio > h4 {
+  font-size: 1.25rem;
+  margin: 0.5rem;
+}
+
+.user-bio > p {
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.25rem;
+  align-self: center;
+  margin: 1rem;
+  font-size: 1rem;
+}

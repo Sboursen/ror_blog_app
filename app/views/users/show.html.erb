@@ -1,18 +1,20 @@
-<h1>Users</h1>
-<p>Shows info for a specific user</p>
+<div class="users">
+  <div>
+    <%= render @user %>
+  </div>
 
+  <div class="user-bio">
+    <h4>Bio</h4>
+    <p>
+      <%= @user.bio %>
+    </p>
+  </div>
 
-<div>
-  <%= render @user %>
+  <div>
+    <% @posts.each_with_index do |post, index| %>
+      <%= render partial: "posts/post" , locals: { post: post, index: index } %>
+        <% end %>
+  </div>
+
+  <button type="button">See all posts</button>
 </div>
-<p>
-  <%= @user.bio %>
-</p>
-
-<div>
-  <% @posts.each_with_index do |post, index| %>
-    <%= render partial: "posts/post" , locals: { post: post, index: index } %>
-      <% end %>
-</div>
-
-<button type="button">See all posts</button>
