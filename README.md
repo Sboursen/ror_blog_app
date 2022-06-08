@@ -15,7 +15,7 @@
 - [x] Milestone 3: Creating a data model.
 - [x] Milestone 4: Processing data in models.
 - [x] Milestone 5: Views.
-- [ ] Milestone 6: Forms
+- [x] Milestone 6: Forms
 - [ ] Milestone 7: Validations, Model specs, and n+1 problems.
 - [ ] Milestone 8: Add Devise.
 - [ ] Milestone 9: Add authorization rules.
