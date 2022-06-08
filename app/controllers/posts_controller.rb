@@ -9,4 +9,9 @@ class PostsController < ApplicationController
     id = params[:id]
     @post = Post.find(id)
   end
+
+  def new
+    @current_user = params[:user_id]
+    @new_post = Post.new
+  end
 end
