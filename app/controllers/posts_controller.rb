@@ -2,12 +2,12 @@ class PostsController < ApplicationController
   def index
     author_id = params[:user_id]
     @user = User.find(author_id)
-    @posts = @user.posts
+    @posts = @user.includes(:user).posts
   end
 
   def show
     id = params[:id]
-    @post = Post.find(id)
+    @post = Post.includes(:user).find(id)
   end
 
   def new; end
