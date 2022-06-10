@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def show
     id = params[:id]
-    @post = Post.find(id)
+    @post = Post.includes([:comments]).find(id)
   end
 
   def new; end
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
     new_post = Post.new(title:, text:, author: user)
 
     if new_post.save
+      flash[:notice] = 'You have successfully created a new post.'
       redirect_to user_post_url(user, new_post)
     else
       render :new
