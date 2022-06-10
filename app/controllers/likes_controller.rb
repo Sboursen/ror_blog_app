@@ -8,6 +8,7 @@ class LikesController < ApplicationController
     new_like = Like.new(post:, author: user)
 
     if new_like.save
+      flash[:notice] = 'You have successfully added a like.'
       redirect_to user_post_url(user, post)
     else
       render :new

@@ -20,6 +20,7 @@ class PostsController < ApplicationController
     new_post = Post.new(title:, text:, author: user)
 
     if new_post.save
+      flash[:notice] = 'You have successfully created a new post.'
       redirect_to user_post_url(user, new_post)
     else
       render :new

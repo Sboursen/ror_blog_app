@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     new_comment = Comment.new(text:, post:, author: user)
 
     if new_comment.save
+      flash[:notice] = 'You have successfully added a new comment.'
       redirect_to user_post_url(user, post)
     else
       render :new
