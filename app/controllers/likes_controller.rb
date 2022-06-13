@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     user = User.find(params[:user_id])
     post = Post.find(params[:post_id])
 
-    new_like = Like.new(post:, author: user)
+    new_like = Like.new(post:, author: current_user)
 
     if new_like.save
       flash[:notice] = 'You have successfully added a like.'

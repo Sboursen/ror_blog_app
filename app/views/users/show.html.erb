@@ -13,8 +13,13 @@
   <div>
     <% @posts.each_with_index do |post, index| %>
       <%= render partial: "posts/post" , locals: { post: post, index: index } %>
-        <% end %>
+    <% end %>
   </div>
 
   <button type="button">See all posts</button>
+
+  <%=form_with model: User.new, url: destroy_user_session_path, method: :delete do %>
+    <button>Sign out</button>
+  <% end %>
 </div>
+

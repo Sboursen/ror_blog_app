@@ -24,6 +24,10 @@ body {
   margin: 3rem;
 }
 
+h2 {
+  text-align: center;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -139,9 +143,22 @@ button {
 
 /* From */
 
-.form {
-  width: 24rem;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin: 3rem auto;
+  width: 24rem;
+}
+
+input {
+  border: 2px solid black;
+  padding: 10px;
+  width: 100%;
+}
+
+.links-wrapper {
+  text-align: center;
 }
 
 .form-group {
