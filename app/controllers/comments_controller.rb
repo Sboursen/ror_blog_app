@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     text = params[:text]
 
-    new_comment = Comment.new(text:, post:, author: user)
+    new_comment = Comment.new(text:, post:, author: current_user)
 
     if new_comment.save
       flash[:notice] = 'You have successfully added a new comment.'
