@@ -9,7 +9,7 @@ def create_and_activate_user(name)
 end
 
 feature 'User Index' do
-  background 'blah' do
+  background do
     @name1 = 'user1'
     @user1 = create_and_activate_user(@name1)
     @name2 = 'user2'
@@ -32,7 +32,7 @@ feature 'User Index' do
     expect(page).to have_content 'Number of posts: 0'
   end
 
-  scenario 'shows zero posts if users have posts' do
+  scenario 'shows number of posts if users have posts' do
     @user1.posts_counter = 1
     @user2.posts_counter = 5
     [@user1, @user2].each(&:save)
