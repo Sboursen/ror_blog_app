@@ -7,8 +7,8 @@ def create_and_activate_likes(author, post, number_of_likes)
 end
 
 def create_and_activate_comments(author, post, number_of_comments)
-  number_of_comments.downto(1).each do |index|
-    Comment.create!(author:, post:, text: "Comment #{index} made by #{author.name} on post #{post.id}")
+  number_of_comments.downto(1).each do |_index|
+    Comment.create!(author:, post:, text: "Comment made by #{author.name} on post #{post.id}")
   end
 end
 
@@ -29,31 +29,22 @@ describe 'Post Index', type: :feature do
   before do
     @name = 'user'
     @user = create_and_activate_user(@name)
-    create_and_activate_posts(@user, 10)
+    create_and_activate_posts(@user, 1)
     create_and_activate_comments(@user, @user.posts.first, 3)
-    visit user_posts_path(@user)
+    create_and_activate_likes(@user, @user.posts.first, 4)
+    visit user_post_path(@user, @user.posts.first)
   end
 
-  it 'shows photos of all the users' do
-    expect(page).to have_css "img[src='#{@name}.jpg']"
-  end
-
-  scenario 'shows username of all the users' do
-    expect(page).to have_content @name
-  end
-
-  it 'shows number of posts that the user has' do
-    expect(page).to have_content 'Number of posts: 10'
-  end
-
-  it "shows the posts title's" do
-    expect(page).to have_content "Post 1 by #{@user.name}"
-    expect(page).to have_content "Post 5 by #{@user.name}"
-    expect(page).to have_content "Post 10 by #{@user.name}"
+  it "shows the post's title" do
+    expect(page).to have_content "Post by #{@user.name}"
   end
 
   it "shows the posts text's" do
     expect(page).to have_content 'My post text'
+  end
+
+  it 'shows who wrote the post' do
+    expect(page).to have_content @name
   end
 
   it 'shows the first comment on a post' do
@@ -64,9 +55,15 @@ describe 'Post Index', type: :feature do
     expect(page).to have_content 'Comment: 3'
   end
 
-  it 'gets redirected to post page after user clicks on a post' do
-    click_link "Post 1 by #{@name}"
+  it 'shows the number of likes a post has' do
+    expect(page).to have_content 'Likes: 4'
+  end
 
-    expect(page).to have_current_path(user_post_path(@user, @user.posts.last))
+  it 'shows the username of each commenter' do
+    expect(page).to have_content @name
+  end
+
+  it 'shows the content of each comment' do
+    expect(page).to have_content "Comment made by #{@user.name} on post #{@user.posts.last.id}"
   end
 end
