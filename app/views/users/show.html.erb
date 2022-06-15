@@ -12,11 +12,13 @@
 
   <div>
     <% @posts.each_with_index do |post, index| %>
-      <%= render partial: "posts/post" , locals: { post: post, index: index } %>
+      <%= render partial: "posts/post" , locals: { user: @user, post: post, index: index } %>
     <% end %>
   </div>
 
-  <button type="button">See all posts</button>
+  <button type="button">
+    <%= link_to "See all posts", user_posts_path(@user) %>
+  </button>
 
   <%=form_with model: User.new, url: destroy_user_session_path, method: :delete do %>
     <button>Sign out</button>
