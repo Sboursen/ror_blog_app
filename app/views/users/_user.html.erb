@@ -1,4 +1,4 @@
-<div class="user">
+<%= link_to user_path(user), class: 'user' do %>
   <div class="photo">
     <img alt="my photo" src="<%= user.photo %>" />
   </div>
@@ -12,4 +12,4 @@
       <%= user.posts_counter %>
     </small>
   </div>
-</div>
+<% end %>
