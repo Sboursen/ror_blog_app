@@ -1,25 +1,25 @@
 require 'rails_helper'
 
+def create_posts_for_user(author, count: 1)
+  count.times do |i|
+    Post.create!(author:, title: "Post #{i} by #{author.name}", text: 'This is a post')
+  end
+end
+
 def create_and_activate_user(name)
   user = User.create!(
     name:, email: "#{name}@example.com", password: '123456', bio: "Bio of #{name}", photo: "#{name}.jpg"
   )
   user.confirm
   user.save
-  create_posts_for_user(user, count: 4)
   user
-end
-
-def create_posts_for_user(author, count: 1)
-  count.times do |i|
-    Post.create(author:, title: "Post #{i} by #{author.name}", text: 'This is a post')
-  end
 end
 
 describe 'User Show', type: :feature do
   before do
     @name = 'user'
     @user = create_and_activate_user(@name)
+    create_posts_for_user(@user, count: 5)
 
     visit user_path(@user)
   end
@@ -32,8 +32,8 @@ describe 'User Show', type: :feature do
     expect(page).to have_content @name
   end
 
-  it 'shows the count of posts by user i.e. 4' do
-    expect(page).to have_content 'Number of posts: 4'
+  it 'shows the count of posts by user i.e. 5' do
+    expect(page).to have_content 'Number of posts: 5'
   end
 
   it 'shows the bio of user' do
@@ -41,7 +41,7 @@ describe 'User Show', type: :feature do
   end
 
   it 'shows the last 3 posts by user' do
-    3.downto(1).each { |i| expect(page).to have_content "Post #{i} by #{@name}" }
+    4.downto(2).each { |i| expect(page).to have_content "Post #{i} by #{@name}" }
   end
 
   it 'shows a button to show all posts by user' do
